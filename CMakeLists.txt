@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21...3.26)
 
-project(Boost-CMake LANGUAGES C CXX VERSION 1.80.0)
+project(Boost-CMake LANGUAGES C CXX VERSION 1.81.0)
 
 if(NOT PROJECT_IS_TOP_LEVEL)
   option(BOOST_DISABLE_TESTS "Do not build test targets, even if building standalone" ON)
@@ -11,15 +11,15 @@ endif()
 
 include(cmake/CPM.cmake)
 
-if(EXISTS "$ENV{CPM_SOURCE_CACHE}/boost_1_80_0")
-  set(FETCHCONTENT_SOURCE_DIR_BOOST "$ENV{CPM_SOURCE_CACHE}/boost_1_80_0" CACHE PATH "Boost source DIR")
+if(EXISTS "$ENV{CPM_SOURCE_CACHE}/boost_1_81_0")
+  set(FETCHCONTENT_SOURCE_DIR_BOOST "$ENV{CPM_SOURCE_CACHE}/boost_1_81_0" CACHE PATH "Boost source DIR")
   set(CPM_Boost_SOURCE ${FETCHCONTENT_SOURCE_DIR_BOOST} CACHE PATH "Manual override")
 endif()
 
-set(BOOST_URL "https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.bz2"
+set(BOOST_URL "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2"
     CACHE STRING "Boost download URL"
 )
-set(BOOST_URL_SHA256 "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
+set(BOOST_URL_SHA256 "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa"
     CACHE STRING "Boost download URL SHA256 checksum"
 )
 
