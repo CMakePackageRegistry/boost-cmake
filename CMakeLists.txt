@@ -52,7 +52,8 @@ if(NOT Boost_POPULATED)
       endif()
       if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/patches/${PROJECT_VERSION}/date_time-02.patch)
         execute_process(
-          COMMAND ${Patch_EXECUTABLE} -N -R -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/patches/${PROJECT_VERSION}/date_time-02.patch
+          COMMAND ${Patch_EXECUTABLE} -N -R -p1 -i
+                  ${CMAKE_CURRENT_SOURCE_DIR}/patches/${PROJECT_VERSION}/date_time-02.patch
           WORKING_DIRECTORY ${BOOST_SOURCE}/libs/date_time COMMAND_ECHO STDOUT
         )
       endif()
@@ -107,13 +108,13 @@ set(BOOST_LIBS_OPTIONAL
     graph
     iostreams
     json
-    locale
+    # FIXME: locale  # TODO(CK) to complex, refactory needed!
     log
     math
     mpi
     graph_parallel # TODO(CK) does this realy depends on mpi?
     program_options
-    #python # complex module
+    # XXX python # NOTE: not supported, to complex module!
     random
     regex
     serialization
